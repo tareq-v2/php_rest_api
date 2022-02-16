@@ -1,0 +1,31 @@
+===========
+   VIEW
+===========
+   
+    <?php
+      if(isset($_POST["view"]))
+      {
+    ?>
+    <table class="table table-striped"> 
+      <thead>
+        <tr>
+          <th>Item ID</th>
+          <th>Item Name</th>
+        </tr>
+      </thead>
+      <?php 
+        $sql=$db->link->query("SELECT * FROM `item_info` ");
+        while($fetch=$sql->fetch_array())
+        {
+      ?>
+      <tr>
+        <td><?php print $fetch['id']?></td>
+        <td><?php print $fetch[1]?></td>
+      </tr>
+      <?php
+      }
+      ?>
+      </table>
+      <?php
+      }
+      ?>
